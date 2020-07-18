@@ -2,38 +2,82 @@ print('Hello user')
 name=input('Enter your name--> ')
 print(f"Hello {name}")
 print('"In [y/n] dialogue boxes press y if yes or n for no!!"')
+print('What would you like to do? ')
+print("""
+1. Guess game!
+2. Weight convertor
+3. Car game
+""")
+select=(input('Enter command number--> '))
 
 # ask for guess game and execute the game
-
-game=input('Would you like to play game? [y/n] -->')
-secret_number = 7
-if game.upper() == "Y" :
-    print('Guess the secret number!!')
-    guess_count=0
-    guess_limit=3
-    while guess_count < guess_limit:
-        guess = int(input('Guess: '))
-        guess_count += 1
-        if guess == secret_number:
-            print('You won!!')
-            break
+try:
+    cmd_no=int(select)
+except:
+    print('Enter command *number* ')
+    quit()
+if cmd_no == 1:
+    print('Guess game!')
+    game=input('Would you like to play game? [y/n] -->')
+    secret_number = 7
+    if game.upper() == "Y" :
+        print('Guess the secret number!!')
+        guess_count=0
+        guess_limit=3
+        while guess_count < guess_limit:
+            guess = int(input('Guess: '))
+            guess_count += 1
+            if guess == secret_number:
+                print('You won!!')
+                break
+        else:
+                print('You lost!!')
     else:
-        print('You lost!!')
-else:
-    print('NO GAME NO PROBLEM!!')
+        print('NO GAME NO PROBLEM!!')
 
 # making weight coverter
-
-wtcvt=input('Would you like to covert your weight? [y/n]')
-if wtcvt.upper()=="Y":
-    weight=int(input('Enter your weight--> '))
-    print('Press [k] to covert in kg or Press [l] to convert in lbs')
-    cvt_factor=input('Do you want convert the weight entered in [k]g or [l]bs? ')
-    if cvt_factor.upper()== "L":
-        converter= weight/0.45
-        print('Your wieght in lbs is -->',converter)
+elif cmd_no==2:
+    print('Weight convertor!')
+    wtcvt=input('Would you like to covert your weight? [y/n]')
+    if wtcvt.upper()=="Y":
+        weight=int(input('Enter your weight--> '))
+        print('Press [k] to covert in kg or Press [l] to convert in lbs')
+        cvt_factor=input('Do you want convert the weight entered in [k]g or [l]bs? ')
+        if cvt_factor.upper()== "L":
+            converter= weight/0.45
+            print('Your wieght in lbs is -->',converter)
+        else:
+            converter=weight*0.45
+            print('Your weight in kg is -->',converter)
     else:
-        converter=weight*0.45
-        print('Your weight in kg is -->',converter)
-else:
-    print('Okay no weight conversion')
+            print('Okay no weight conversion')
+
+#adding car game!!!
+elif cmd_no==3:
+    print('Car game!!!')
+    command=""
+    start=False
+    while True:
+        command=input('> ').lower()
+        if command=="start":
+            if start:
+                print('Car already started!')
+            else:
+                start=True
+                print('Car started ... Ready to go!!')
+        elif command=="stop":
+                if not start:
+                    print('Car already stopped!')
+                else:
+                    start=False
+                    print('Car stopped!')
+        elif command=="help":
+                    print("""
+start- To start the car!
+stop- To stop the car!
+quit- To quit the game
+        """)
+        elif command == "quit":
+            break
+        else:
+            print('Sorry I didnt understand that :(')
