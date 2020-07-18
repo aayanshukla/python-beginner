@@ -9,4 +9,4 @@ if fh > 40:
     pay = reg+ovtp
     print('Pay:',pay)
 else:
-    print('Pay:',pay)
+    print('Pay:',reg)
