@@ -1,6 +1,9 @@
 print('Hello user')
 name=input('Enter your name--> ')
 print(f"Hello {name}")
+
+# ask for guess game and execute the game
+
 game=input('Would you like to play game? [y/n] -->')
 secret_number = 7
 if game.upper() == "Y" :
@@ -17,4 +20,3 @@ if game.upper() == "Y" :
         print('You lost!!')
 else:
     print('NO GAME NO PROBLEM!!')
-    
