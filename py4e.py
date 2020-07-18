@@ -6,6 +6,7 @@ try:
     fr=float(rate)
 except:
     print('Enter a numeric value')
+    quit()
 reg= fh*fr
 if fh > 40:
     ovtp = (fh-40)*(fr*0.5)
