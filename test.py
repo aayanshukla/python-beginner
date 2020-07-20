@@ -68,35 +68,41 @@ In [y/n] dialogue boxes press y if yes or n for no!!
     #adding car game!!!
 
     elif cmd_no==3:
-        print('Car game!!!')
-        command=""
-        start=False
-        while True:
-            command=input('> ').lower()
-            if command=="start":
-                if start:
-                    print('Car already started!')
-                else:
-                    start=True
-                    print('Car started ... Ready to go!!')
-            elif command=="stop":
-                    if not start:
-                        print('Car already stopped!')
-                    else:
-                        start=False
-                        print('Car stopped!')
-            elif command=="help":
-                        print("""
+        car_game=input('Would you like to play the "Car game!!"? --> ').lower()
+        if car_game=="y":
+                    print('Car game!!!')
+                    command=""
+                    start=False
+                    while True:
+                        command=input('> ').lower()
+                        if command=="start":
+                            if start:
+                                print('Car already started!')
+                            else:
+                                start=True
+                                print('Car started ... Ready to go!!')
+                        elif command=="stop":
+                                if not start:
+                                    print('Car already stopped!')
+                                else:
+                                    start=False
+                                    print('Car stopped!')
+                        elif command=="help":
+                                    print("""
 start- To start the car!
 stop- To stop the car!
 quit- To quit the game
-            """)
-            elif command == "quit":
-                break
-            elif cmd_no==4:
-                print('Quit')
-            else:
-                print('Sorry I didnt understand that :(')
+                        """)
+                        elif command == "quit":
+                            break
+                        elif cmd_no==4:
+                            print('Quit')
+                        else:
+                            print('Sorry I didnt understand that :(')
+        else:
+            print('No game No life!!')
+            
+
     exit_app=input('Would you like to exit the app? [y/n] -->')
     if exit_app.lower()=="y":
         quit_cmd=False
