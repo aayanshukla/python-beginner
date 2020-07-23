@@ -101,10 +101,13 @@ quit- To quit the game
                             print('Sorry I didnt understand that :(')
         else:
             print('No game No life!!')
-            
+
 
     exit_app=input('Would you like to exit the app? [y/n] -->')
     if exit_app.lower()=="y":
+        print("""
+SAYONARA!!!
+""")
         quit_cmd=False
     else:
         quit_cmd=True
