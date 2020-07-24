@@ -1,16 +1,8 @@
-print('Hello Aayan')
-hour=input('Enter hour: ')
-rate=input('Enter rate: ')
-try:
-    fh=float(hour)
-    fr=float(rate)
-except:
-    print('Enter a numeric value')
-    quit()
-reg= fh*fr
-if fh > 40:
-    ovtp = (fh-40)*(fr*0.5)
-    pay = reg+ovtp
-    print('Pay:',pay)
-else:
-    print('Pay:',reg)
+cel=int(input('Enter tempreture--> '))
+print('Press [C] for Celsuis or [F]arhenheit')
+convt_fact=input('Would you like to convert the following tempreture in [C]elsuis or [F]arhenheit? ')
+if convt_fact=="f".lower():
+    tempreture=(9/5)*cel+32
+    print(f'Tempreture in Farhenheit is {tempreture} Farhenheit')
+    tempreture=(5/9)*cel-32
+    print(f'Tempreture in Celsuis is {tempreture} Celsuis')
