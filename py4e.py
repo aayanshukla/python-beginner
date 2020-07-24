@@ -5,5 +5,5 @@ if convt_fact=="f".lower():
     tempreture=(9/5*cel)+32
     print(f'Tempreture in Farhenheit is {tempreture} Farhenheit')
 else:
-    tempreture=((cel-32)*5/9
+    tempreture=(cel-32)*5/9
     print(f'Tempreture in Celsuis is {tempreture} Celsuis')
