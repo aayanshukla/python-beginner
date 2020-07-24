@@ -4,5 +4,6 @@ convt_fact=input('Would you like to convert the following tempreture in [C]elsui
 if convt_fact=="f".lower():
     tempreture=(9/5)*cel+32
     print(f'Tempreture in Farhenheit is {tempreture} Farhenheit')
+else:
     tempreture=(5/9)*cel-32
     print(f'Tempreture in Celsuis is {tempreture} Celsuis')
